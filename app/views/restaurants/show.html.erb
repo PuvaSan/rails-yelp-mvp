@@ -1,18 +1,20 @@
-<div class="container">
-  <h1><%= @restaurant.name %></h1>
-  <p>address: <%= @restaurant.address %></p>
-  <p>Category: <%= @restaurant.category %></p>
+<div class="container-sm">
+  <div class="mx-auto">
+    <h1><%= @restaurant.name %></h1>
+    <p>address: <%= @restaurant.address %></p>
+    <p>Category: <%= @restaurant.category %></p>
 
-  <div>
-    <h5>Reviews</h5>
-    <ul>
-      <% @restaurant.reviews.each do |review| %>
-      <li>
-        <p>Rating: <%= review.rating %>/5</p>
-        <p>"<%= review.content %>"</p>
-      </li>
-      <% end %>
-    </ul>
+    <div class="card">
+      <h5>Reviews</h5>
+      <ul>
+        <% @restaurant.reviews.each do |review| %>
+        <li>
+          <p>Rating: <%= review.rating %>/5</p>
+          <p>"<%= review.content %>"</p>
+        </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <%= link_to "back to list", restaurants_path %>
