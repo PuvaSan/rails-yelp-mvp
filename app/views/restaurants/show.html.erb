@@ -5,7 +5,7 @@
     <p>Category: <%= @restaurant.category %></p>
 
     <div class="card">
-      <h5>Reviews</h5>
+      <h5>Reviews <span><%= link_to "+ new review", new_restaurant_review_path(@restaurant) %></span></h5>
       <ul>
         <% @restaurant.reviews.each do |review| %>
         <li>
