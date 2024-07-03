@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  # only using before_action: set_restaurant
   def show; end
 
   def new

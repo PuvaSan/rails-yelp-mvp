@@ -12,13 +12,22 @@
 puts 'Cleaning the database...'
 
 Restaurant.destroy_all
+Review.destroy_all
 
 puts 'Creating restaurants....'
 
-Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'chinese')
-Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'japanese')
-Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'french')
-Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'italian')
-Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'belgian')
+Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'chinese', phone_number: Faker::PhoneNumber.phone_number)
+Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'japanese', phone_number: Faker::PhoneNumber.phone_number)
+Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'french', phone_number: Faker::PhoneNumber.phone_number)
+Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'italian', phone_number: Faker::PhoneNumber.phone_number)
+Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_name, category: 'belgian', phone_number: Faker::PhoneNumber.phone_number)
 
 puts 'Restaurants created!'
+
+puts 'creating reviews!'
+
+Restaurant.all.each do |restaurant|
+  Review.create(content: Faker::Quotes::Shakespeare.as_you_like_it_quote, rating: rand(0..5), restaurant: restaurant)
+end
+
+puts 'completed creating reviews and assigning it to a Restaurant instance'
