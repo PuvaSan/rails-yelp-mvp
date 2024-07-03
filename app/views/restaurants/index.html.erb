@@ -1,10 +1,15 @@
+
+
+
 <div class="container-md">
-  <h1>All Restaurants</h1>
-  <ul>
+  <h1 class="text-uppercase">All Restaurants</h1>
+  <ul class="ms-0">
       <% @restaurants.each do |restaurant| %>
-      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+      <li class="card col-6 p-3 m-3"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <%= link_to restaurant.name, restaurant_path(restaurant),
+        class: "card-body text-center py-5 fs-4 text-white", style: 'text-decoration: none;' %>
+      </li>
       <% end %>
   </ul>
-
-  <%= link_to "Add new Restaurant", new_restaurant_path %>
 </div>
