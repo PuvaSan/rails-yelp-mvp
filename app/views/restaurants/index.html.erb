@@ -5,8 +5,8 @@
   <h1 class="text-uppercase text-center">All Restaurants</h1>
   <ul class="ms-0 row col-12 justify-content-center">
       <% @restaurants.each do |restaurant| %>
-      <li class="card col-6 p-3 m-3"
-      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <li class="card col-6 p-3 m-3" id="index-cards"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/708488/pexels-photo-708488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
         <%= link_to restaurant.name, restaurant_path(restaurant),
         class: "card-body text-center py-5 fs-4 text-white", style: 'text-decoration: none;' %>
       </li>

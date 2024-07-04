@@ -26,3 +26,8 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+#index-cards {
+  background-size: cover;
+  background-position: center;
+}

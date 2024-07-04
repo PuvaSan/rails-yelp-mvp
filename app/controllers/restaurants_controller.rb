@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: %i[show create]
+  before_action :set_restaurant, only: %i[show]
 
   def index
     @restaurants = Restaurant.all
@@ -8,11 +8,7 @@ class RestaurantsController < ApplicationController
   # only using before_action: set_restaurant
   def show
 
-    @review = Review.new(params[:review])
-    @review.restaurant = @restaurant
-    @review.save
-
-    render :new, status: :unprocessable_entity if @review.save
+    @review = Review.new
 
   end
 
